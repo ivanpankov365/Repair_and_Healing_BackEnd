@@ -30,7 +30,7 @@ public class Task {
 	private String caseStatus;
 
 	@Column(name = "case_execute_before")
-	private String caseExecuteBefore;
+	private String caseExecuteBefore;    // yбрать столбец
 
 	@Column(name = "room_number")
 	private String roomNumber;

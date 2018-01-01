@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Repair & Healing</title>
+	 <script type="text/javascript" src="resources/jquery-3.2.1.js"></script>
 </head>
 <body>
 
@@ -36,6 +37,14 @@
 		
 	</form>
 </div>
+<div id = "buttom"> buttom
+</div>
+
+<script>
+$( "#buttom" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+</script>
 
 </body>
 </html>

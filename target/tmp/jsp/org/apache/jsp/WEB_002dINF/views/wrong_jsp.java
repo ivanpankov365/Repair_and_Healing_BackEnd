@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class wrong_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -30,7 +30,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -49,34 +49,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
-      out.write("<div\r\n");
-      out.write("\txmlns:jsp=\"http://java.sun.com/JSP/Page\" \r\n");
-      out.write("\txmlns:spring=\"http://www.springframework.org/tags\"\r\n");
-      out.write("\txmlns:c=\"http://java.sun.com/jsp/jstl/core\"\r\n");
-      out.write("\tversion=\"2.0\"\r\n");
-      out.write(">\r\n");
-      out.write("\t\r\n");
-      out.write("\t\r\n");
-      out.write("    ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${newTask}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("\t<form action=\"/index/form\" method=\"POST\">\r\n");
-      out.write("\t\t<table>\r\n");
-      out.write("\t\t\t<tr><td>CASE_TEXT</td><td><input name=\"caseText\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>CASE_STATUS</td><td><input name=\"caseStatus\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>CASE_DURING_TIME</td><td><input name=\"caseExecuteBefore\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>ROOM_NUMBER</td><td><input name=\"roomNumber\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>USER_EMAIL</td><td><input name=\"userEmail\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>USER_NAME</td><td><input name=\"userFirstName\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td>USER_SONAME</td><td><input name=\"userLastName\" type=\"text\" /></td></tr>\r\n");
-      out.write("\t\t\t<tr><td></td><td><input type=\"submit\" /></td></tr>\r\n");
-      out.write("\t\t</table>\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t</form>\r\n");
-      out.write("</div>\r\n");
+      out.write(" <p>WRONG!!!</p>\r\n");
+      out.write(" \r\n");
+      out.write(" <p>wrong login or password</p>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");

@@ -46,6 +46,7 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("\t<title>Repair & Healing</title>\r\n");
+      out.write("\t <script type=\"text/javascript\" src=\"resources/jquery-3.2.1.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
@@ -78,6 +79,14 @@ public final class service_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\r\n");
       out.write("\t</form>\r\n");
       out.write("</div>\r\n");
+      out.write("<div id = \"buttom\"> buttom\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<script>\r\n");
+      out.write("$( \"#buttom\" ).click(function() {\r\n");
+      out.write("  alert( \"Handler for .click() called.\" );\r\n");
+      out.write("});\r\n");
+      out.write("</script>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
