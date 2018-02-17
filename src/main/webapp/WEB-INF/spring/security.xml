@@ -5,4 +5,16 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
+<http auto-config="true">
+		<intercept-url pattern="/test1" access="ROLE_ADMIN" />		
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<user-service>
+				<user name="jimi" password="jimispassword" authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
 </beans:beans>

@@ -27,7 +27,10 @@
 	
 	
 	<!-- Файл с настройками безопасности -->
-	<import resource="security.xml" /> 
+	<!-- <import resource="security.xml" />  -->
+	<bean class="ru.yandex.startapp.config.BeansConfig" />
+	<bean class="ru.yandex.startapp.config.SecurityConfig" />
+	<context:component-scan base-package="ru.yandex.startapp.auth" />
 	
 	
 	

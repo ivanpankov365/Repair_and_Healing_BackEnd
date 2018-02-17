@@ -8,13 +8,12 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public class TaskDaoImpl implements TaskDao{
+public class TaskDaoImpl implements TaskDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-		
+
 	public void addTask(Task task) {
 		Session tmpSession = sessionFactory.getCurrentSession();
 		tmpSession.save(task);
@@ -22,18 +21,16 @@ public class TaskDaoImpl implements TaskDao{
 
 	@SuppressWarnings("unchecked")
 	public List<Task> listTask() {
-		return sessionFactory.getCurrentSession().createQuery("from Task")
-				.list();
+		return sessionFactory.getCurrentSession().createQuery("from Task").list();
 	}
 
 	@Override
 	public void removeTask(Integer id) {
-		Task task = (Task) sessionFactory.getCurrentSession().load(
-				Task.class, id);
+		Task task = (Task) sessionFactory.getCurrentSession().load(Task.class, id);
 		if (null != task) {
 			sessionFactory.getCurrentSession().delete(task);
 		}
-		
+
 	}
 
 }

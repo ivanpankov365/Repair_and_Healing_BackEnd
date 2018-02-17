@@ -7,14 +7,13 @@ import ru.yandex.startapp.domain.Admin;
 import ru.yandex.startapp.dao.*;
 
 @Service
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
 	@Autowired
-    private AdminDao adminDao;
+	private AdminDao adminDao;
 
 	@Transactional
 	public boolean verifyAdmin(Admin admin) {
 		return adminDao.verifyAdmin(admin);
 	}
 
-	
 }

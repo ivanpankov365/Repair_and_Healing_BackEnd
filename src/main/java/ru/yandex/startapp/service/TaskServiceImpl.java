@@ -10,14 +10,14 @@ import ru.yandex.startapp.dao.TaskDao;
 import ru.yandex.startapp.domain.Task;
 
 @Service
-public class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService {
 	@Autowired
-    private TaskDao taskDao;
-	
+	private TaskDao taskDao;
+
 	@Transactional
 	public void addTask(Task task) {
 		taskDao.addTask(task);
-		
+
 	}
 
 	@Transactional
@@ -28,6 +28,6 @@ public class TaskServiceImpl implements TaskService{
 	@Transactional
 	public void removeTask(Integer id) {
 		taskDao.removeTask(id);
-		
+
 	}
 }

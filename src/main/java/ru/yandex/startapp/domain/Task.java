@@ -1,6 +1,5 @@
 package ru.yandex.startapp.domain;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,18 +9,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "task")
 public class Task {
-	
-	
+
 	@Id
 	@Column(name = "task_id")
 	@GeneratedValue
-	private Long taskId;
+	private Integer taskId;
 
 	@Column(name = "master_id")
-	private Long masterId;
+	private Integer masterId;
 
 	@Column(name = "case_id")
-	private Long caseId;
+	private String caseId;
 
 	@Column(name = "case_text")
 	private String caseText;
@@ -30,7 +28,7 @@ public class Task {
 	private String caseStatus;
 
 	@Column(name = "case_execute_before")
-	private String caseExecuteBefore;    // yбрать столбец
+	private String caseExecuteBefore; // yбрать столбец
 
 	@Column(name = "room_number")
 	private String roomNumber;
@@ -46,15 +44,15 @@ public class Task {
 
 	// Getters
 
-	public Long getTaskId() {
+	public Integer getTaskId() {
 		return taskId;
 	}
 
-	public Long getMasterId() {
+	public Integer getMasterId() {
 		return masterId;
 	}
 
-	public Long getCaseId() {
+	public String getCaseId() {
 		return caseId;
 	}
 
@@ -88,15 +86,15 @@ public class Task {
 
 	// --- Setters
 
-	public void setTaskId(Long taskIdS) {
+	public void setTaskId(Integer taskIdS) {
 		taskId = taskIdS;
 	}
 
-	public void setMasterId(Long masterIdS) {
+	public void setMasterId(Integer masterIdS) {
 		masterId = masterIdS;
 	}
 
-	public void setCaseId(Long caseIdS) {
+	public void setCaseId(String caseIdS) {
 		caseId = caseIdS;
 	}
 
@@ -132,10 +130,9 @@ public class Task {
 	public String toString() {
 		return "Task{" + "id=" + taskId + ", room=" + roomNumber + ", name=" + userFirstName + '}';
 	}
-	
-public Task() {
-		
+
+	public Task() {
+
 	}
-	
 
 }

@@ -10,15 +10,18 @@ import ru.yandex.startapp.domain.Master;
 import ru.yandex.startapp.dao.*;
 
 @Service
-public class MasterServiceImpl implements MasterService{
+public class MasterServiceImpl implements MasterService {
 
 	@Autowired
-    private MasterDao masterDao;
-	
+	private MasterDao masterDao;
+
+	@Autowired
+	private UserDao userDao;
+
 	@Transactional
 	public void addMaster(Master master) {
 		masterDao.addMaster(master);
-		
+		userDao.addUser(master.getLogin(), master.getPassword());
 	}
 
 	@Transactional
@@ -29,7 +32,13 @@ public class MasterServiceImpl implements MasterService{
 	@Transactional
 	public void removeMaster(Integer id) {
 		masterDao.removeMaster(id);
-		
+
+	}
+
+	@Transactional
+	public Master verifyMaster(Master master) {
+		return masterDao.verifyMaster(master);
+
 	}
 
 }
