@@ -66,5 +66,23 @@ public class MasterDaoImpl implements MasterDao {
 		}
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Master verifyMaster(String login) {
+
+		Query queryLogin = sessionFactory.getCurrentSession().createQuery("from Master where login = :paramLogin");
+		queryLogin.setParameter("paramLogin", login);
+		List loginList = queryLogin.list();
+
+		if (!loginList.isEmpty()) {
+			
+				return (Master) loginList.get(0);
+			
+		} else {
+			System.out.println("wrong LOGIN");
+			return null;
+		}
+
+	}
 
 }

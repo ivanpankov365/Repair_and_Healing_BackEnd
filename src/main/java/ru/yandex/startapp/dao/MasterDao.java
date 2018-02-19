@@ -14,5 +14,7 @@ public interface MasterDao {
 	public void removeMaster(Integer id);
 
 	public Master verifyMaster(Master master);
+	
+	public Master verifyMaster(String login);
 
 }

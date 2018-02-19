@@ -67,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers("/api/auth").permitAll()
         .antMatchers(HttpMethod.GET, "/tasklist").hasAnyAuthority("ADMIN","MASTER")
+        .antMatchers(HttpMethod.POST, "/checkmaster").hasAuthority("MASTER")
         .anyRequest().permitAll();  
 
 		/*http.formLogin().defaultSuccessUrl("http://localhost:4200", true);*/
@@ -79,8 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		
 		users = new ArrayList<UserDetails>();
-		System.out.println("KuKuUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU!");
-		
+			
 		List<ru.yandex.startapp.domain.User> usersList = userDao.listUser();
 		
 		
@@ -89,6 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
            .withUser(usersList.get(i).getUsername())
            .password(usersList.get(i).getPassword())
            .authorities(usersList.get(i).getRole());
+    	   System.out.println(usersList.get(i).getUsername());
 		}
 		
     }

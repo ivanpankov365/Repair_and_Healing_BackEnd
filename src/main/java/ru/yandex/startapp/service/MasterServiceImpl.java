@@ -40,5 +40,11 @@ public class MasterServiceImpl implements MasterService {
 		return masterDao.verifyMaster(master);
 
 	}
+	
+	@Transactional
+	public Master verifyMaster(String login) {
+		return masterDao.verifyMaster(login);
+
+	}
 
 }

@@ -34,29 +34,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class MainController {
 
 	@Autowired
-	private MasterService masterServise;
+	private MasterService masterService;
 	@Autowired
-	private TaskService taskServise;
+	private TaskService taskService;
 	@Autowired
-	private AdminService adminServise;
+	private AdminService adminService;
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/tasklist", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Task> getTaskList() {
-		return taskServise.listTask();
+		return taskService.listTask();
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/masterlist", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Master> getmasterList() {
-		return masterServise.listMaster();
+		return masterService.listMaster();
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/addnewtask", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public Task addNewTask(@RequestBody Task task) {
-		taskServise.addTask(task);
+		taskService.addTask(task);
 		return task;
 	}
 
@@ -64,7 +64,7 @@ public class MainController {
 	@RequestMapping(value = "/addnewmaster", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public Master addNewTask(@RequestBody Master master) {
-		masterServise.addMaster(master);
+		masterService.addMaster(master);
 		return master;
 	}
 
@@ -72,7 +72,7 @@ public class MainController {
 	@RequestMapping(value = "/deletetask", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public Task deleteTask(@RequestBody Task task) {
-		taskServise.removeTask(task.getTaskId());
+		taskService.removeTask(task.getTaskId());
 		return task;
 	}
 
@@ -80,14 +80,14 @@ public class MainController {
 	@RequestMapping(value = "/checkadmin", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public boolean checkAdmin(@RequestBody Admin admin) {
-		return adminServise.verifyAdmin(admin);
+		return adminService.verifyAdmin(admin);
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/checkmaster", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
-	public Master checkMaster(@RequestBody Master master) {
-		return masterServise.verifyMaster(master);
+	public Master checkMaster(@RequestBody String login) {
+		return masterService.verifyMaster(login);
 	}
 
 	@RequestMapping("/")
