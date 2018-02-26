@@ -67,7 +67,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers("/api/auth").permitAll()
         .antMatchers(HttpMethod.GET, "/tasklist").hasAnyAuthority("ADMIN","MASTER")
-        .antMatchers(HttpMethod.POST, "/checkmaster").hasAuthority("MASTER")
+        .antMatchers(HttpMethod.GET, "/masterlist").hasAuthority("ADMIN")
+        .antMatchers(HttpMethod.POST, "/addnewmaster").hasAuthority("ADMIN")
+        .antMatchers(HttpMethod.POST, "/deletetask").hasAnyAuthority("ADMIN","MASTER")
         .anyRequest().permitAll();  
 
 		/*http.formLogin().defaultSuccessUrl("http://localhost:4200", true);*/
